@@ -40,7 +40,6 @@ fun Greeting(name: String) {
 fun DefaultPreview() {
     MaterialTheme {
         Column {
-            Greeting("Android")
             Home()
         }
     }
