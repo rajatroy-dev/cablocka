@@ -7,7 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Home() {
+fun HomeScreen() {
     val itemsList = (0..5).toList()
     val itemsIndexedList = listOf("A", "B", "C")
 

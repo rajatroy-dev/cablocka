@@ -1,5 +1,7 @@
 package `in`.rajatroy.cablocka.common
 
+import `in`.rajatroy.cablocka.ui.screens.edit.EditScreen
+import `in`.rajatroy.cablocka.ui.screens.home.HomeScreen
 import `in`.rajatroy.cablocka.ui.screens.shared.NavigationItem
 import `in`.rajatroy.cablocka.ui.screens.temp.*
 import androidx.compose.runtime.Composable
@@ -24,6 +26,9 @@ fun NavigationGraph(navController: NavHostController) {
         }
         composable(NavigationItem.Profile.route) {
             ProfileScreen()
+        }
+        composable(NavigationItem.Edit.route) {
+            EditScreen()
         }
     }
 }
