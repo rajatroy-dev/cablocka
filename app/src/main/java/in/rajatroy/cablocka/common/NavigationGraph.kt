@@ -27,8 +27,10 @@ fun NavigationGraph(navController: NavHostController) {
         composable(NavigationItem.Profile.route) {
             ProfileScreen()
         }
-        composable(NavigationItem.Edit.route) {
-            EditScreen()
+        composable(NavigationItem.Edit.route) { backStackEntry ->
+            val id = backStackEntry.arguments?.getString("id")
+            requireNotNull(id) { "Id parameter wasn't found. Please make sure it's set!" }
+            EditScreen(id)
         }
     }
 }

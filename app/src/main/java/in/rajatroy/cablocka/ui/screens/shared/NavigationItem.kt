@@ -8,5 +8,7 @@ sealed class NavigationItem(var route: String, var icon: Int, var title: String)
     object Movies : NavigationItem("movies", R.drawable.ic_movie, "Movies")
     object Books : NavigationItem("books", R.drawable.ic_book, "Books")
     object Profile : NavigationItem("profile", R.drawable.ic_profile, "Profile")
-    object Edit : NavigationItem("edit", R.drawable.ic_profile, "Edit")
+    object Edit : NavigationItem("edit/{id}", R.drawable.ic_profile, "Edit") {
+        fun createRoute(id: String) = "$id"
+    }
 }
