@@ -15,6 +15,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 
 
 // https://johncodeos.com/how-to-create-bottom-navigation-bar-with-jetpack-compose/#creating-the-bottom-navigation-bar
+// https://medium.com/google-developer-experts/navigating-in-jetpack-compose-78c78d365c6a
 @Composable
 fun BottomNavigationBar(navController: NavController) {
     val items = listOf(
@@ -22,7 +23,8 @@ fun BottomNavigationBar(navController: NavController) {
         NavigationItem.Music,
         NavigationItem.Movies,
         NavigationItem.Books,
-        NavigationItem.Profile
+        NavigationItem.Profile,
+        NavigationItem.Edit
     )
     BottomNavigation(
         backgroundColor = colorResource(id = R.color.teal_200),
@@ -41,7 +43,7 @@ fun BottomNavigationBar(navController: NavController) {
                 selected = currentRoute == item.route,
                 onClick = {
                     if (item.route == NavigationItem.Edit.route) {
-                        navController.navigate(NavigationItem.Edit.createRoute("anId")) {
+                        navController.navigate(NavigationItem.Edit.createRoute("edit/anId")) {
 
                             navController.graph.startDestinationRoute?.let { route ->
                                 popUpTo(route) {
