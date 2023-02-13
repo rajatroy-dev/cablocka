@@ -27,8 +27,16 @@ fun EditScreen(id: String) {
 
     ModalBottomSheetLayout(
         sheetState = sheetState,
-        sheetContent = { BottomModalSheet() },
-        modifier = Modifier.fillMaxSize()
+        sheetContent = { BottomModalSheet(onAction = {
+            coroutineScope.launch {
+                if (it) {
+                    sheetState.hide()
+                } else {
+                    sheetState.show()
+                }
+            }
+        }) },
+        modifier = Modifier.fillMaxSize(),
     ) {
         Column(
             modifier = Modifier
